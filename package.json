@@ -44,8 +44,11 @@
     "release-it": "^15.3.0"
   },
   "release-it": {
-    "hooks": {
-      "before:init": "npm test"
+    "github": {
+      "release": true
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
