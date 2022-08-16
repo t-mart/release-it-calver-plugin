@@ -1,15 +1,18 @@
 {
-  "name": "@csmith/release-it-calver-plugin",
-  "version": "2022.5.13",
+  "name": "@t-mart/release-it-calver-plugin",
+  "version": "2022.8.15",
   "description": "Calender Versioning (calver) plugin for Release It!",
-  "main": "index.js",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "module": "./dist/index.js",
   "scripts": {
-    "test": "nyc --reporter=lcovonly mocha **/*-tests.js --timeout 10000",
-    "release": "release-it -- --ci"
+    "test": "jest",
+    "release": "release-it -- --ci",
+    "build": "tsup-node src/index.ts --clean --sourcemap --format esm --dts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/casmith/release-it-calver-plugin.git"
+    "url": "git+https://github.com/t-mart/release-it-calver-plugin.git"
   },
   "keywords": [
     "release",
@@ -26,36 +29,23 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/casmith/release-it-calver-plugin/issues"
+    "url": "https://github.com/t-mart/release-it-calver-plugin/issues"
   },
-  "homepage": "https://github.com/casmith/release-it-calver-plugin#readme",
-  "type": "module",
+  "homepage": "https://github.com/t-mart/release-it-calver-plugin#readme",
   "dependencies": {
-    "calver": "^21.11.3",
-    "chai": "^4.2.0",
-    "mocha": "^10.0.0"
+    "calver": "^22.8.4",
+    "tsup": "^6.2.2"
   },
   "devDependencies": {
-    "nyc": "^15.1.0",
-    "release-it": "^15.0.0"
+    "release-it": "^15.3.0",
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "release-it": "^14.6.2"
+    "release-it": "^15.3.0"
   },
   "release-it": {
-    "git": {
-      "requireCleanWorkingDir": false
-    },
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "publish": true
-    },
-    "plugins": {
-      "./index.js": {
-        "format": "yyyy.mm.minor"
-      }
+    "hooks": {
+      "before:init": "npm test"
     }
   }
 }
