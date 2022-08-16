@@ -8,7 +8,7 @@ This plugin enables Calendar Versioning (calver) with Release It! This is especi
 application projects in a continuous delivery environment.
 
 ```shell
-npm install --save-dev @@t-mart/release-it-calver-plugin
+npm install --save-dev @t-mart/release-it-calver-plugin
 ```
 
 In [release-it](https://github.com/release-it/release-it) config:
