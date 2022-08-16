@@ -3,7 +3,7 @@ import type { IncrementOptions } from "release-it";
 import calver from "calver";
 
 const DEFAULT_FORMAT = "yyyy.mm.minor";
-const DEFAULT_INCREMENT = "calendar";
+const DEFAULT_LEVEL = "calendar";
 
 class CalverPlugin extends Plugin {
   getFormat() {
@@ -11,7 +11,7 @@ class CalverPlugin extends Plugin {
   }
 
   getLevel() {
-    return (this.getContext()["increment"] as string) ?? DEFAULT_INCREMENT;
+    return (this.getContext()["level"] as string) ?? DEFAULT_LEVEL;
   }
 
   override getIncrementedVersion(options: IncrementOptions) {

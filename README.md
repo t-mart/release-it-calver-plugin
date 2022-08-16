@@ -15,9 +15,9 @@ In [release-it](https://github.com/release-it/release-it) config:
 
 ```json
 "plugins": {
-  "@csmith/release-it-calver-plugin": {
+  "@tmart/release-it-calver-plugin": {
     "format": "yyyy.mm.minor",
-    "increment": "calendar"
+    "level": "calendar"
   }
 }
 ```
