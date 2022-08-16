@@ -1,6 +1,6 @@
 {
   "name": "@t-mart/release-it-calver-plugin",
-  "version": "2022.8.16",
+  "version": "2022.8.17",
   "description": "Calender Versioning (calver) plugin for Release It!",
   "type": "module",
   "exports": "./dist/index.js",
