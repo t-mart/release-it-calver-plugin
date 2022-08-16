@@ -30,7 +30,7 @@ jobs:
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Set NPM Token
-        run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+        run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
 
       - name: Install
         run: pnpm install
@@ -39,6 +39,6 @@ jobs:
         run: pnpm build
 
       - name: Run release-it
-        run: npm run release
+        run: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

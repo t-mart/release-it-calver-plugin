@@ -6,8 +6,7 @@
   "exports": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {
-    "test": "jest",
-    "release": "release-it -- --ci",
+    "release": "release-it --verbose",
     "build": "tsup-node src/index.ts --clean --sourcemap --format esm --dts"
   },
   "repository": {
